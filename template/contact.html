@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Portfolio {% endblock title %}
+{% block content %}
+
+<div class="contact">
+    <div class="row"> 
+       <form method="POST" class="contact-form" action="{% url 'contact-page' %}">
+            {% csrf_token %}
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="phone_number"></label>
+            <input type="text" id="phone_number" name="phone_number" placeholder="Your phone number" required>
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+
+            <label for="message"></label>
+            <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
+
+            <button type="submit" class="btn-box">Send Message</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

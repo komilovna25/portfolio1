@@ -1,0 +1,46 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <meta name="description" content="Portfolio of a developer.">
+    <meta name="keywords" content="portfolio, developer, projects">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <a href="https://github.com/komilovna25" class="logo">My Portfolio</a>
+        <nav class="navbar">
+            
+           
+            <a href="{% url 'index-page' %}" style="--i:1" class="active">Home</a>
+            <a href="{% url 'about-page' %}" style="--i:2">About</a>
+            <a href="{% url 'portfolio-page' %}" style="--i:4">Portfolio</a>
+            <a href="{% url 'contact-page' %}" style="--i:5">Contact</a>
+           
+        </nav>
+       
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nisa_n5716/" style="--i:7"><i class="bx bxl-instagram"></i></a>
+                <a href="https://t.me/developer01_25" style="--i:8"><i class="bx bxl-telegram"></i></a>
+                <a href="https://github.com/komilovna25" style="--i:9"><i class="bx bxl-github"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

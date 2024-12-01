@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Portfolio {% endblock title %}
+{% block content %}
+  
+    <section class="about" id="about">
+       
+        <div class="about-img">
+            <img src="{% static 'imgs/about.webp' %}" alt="">
+        </div>
+        <div class="about-text">
+            {% for about in about %}
+            <h4>{{ about.title }}</h4>
+            <p>{{ about.description }}</p>
+                     <a href="" class="btn-box">More About</a>
+            {% endfor %}
+        </div>
+    </section>
+   
+
+    {% endblock content %}

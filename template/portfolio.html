@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Portfolio {% endblock title %}
+{% block content %}
+
+
+    <section>
+        <div class="services" id="services">
+            <div class="container">
+                <h1 class="sub-title">My <span>Portfolio</span></h1>
+                <div class="services-list">
+                    
+                        {% for portfolio in portfolio %}
+                        <div>
+                        <h2>{{ portfolio.title }}</h2>
+                        <p>{{ portfolio.description }}</p>
+                           <a href="https://github.com/komilovna25" class="read">Lern more</a>
+                        </div>
+                           {% endfor %}
+                        
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock content %}
