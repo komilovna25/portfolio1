@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% endblock title %}
+{% block content %}
+
+
+<main class="main">
+  <!-- Resume Section -->
+  <section id="resume" class="resume section">
+
+   <!-- Section Title -->
+   <div class="container section-title" data-aos="fade-up">
+     <h2>Resume</h2>
+     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+   </div><!-- End Section Title -->
+
+   <div class="container">
+
+     <div class="row">
+
+       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+         <h3 class="resume-title">Sumary</h3>
+         {% for resume in resume %}
+         <div class="resume-item pb-0">
+           <h4>{{ resume.author }}</h4>
+           <p><em>{{ resume.description }}</em></p>
+           <ul>
+             <li>{{ resume.title }}</li>
+             <li>(123) 456-7891</li>
+             <li>alice.barkley@example.com</li>
+           </ul>
+         </div><!-- Edn Resume Item -->
+         {% endfor %}
+         <h3 class="resume-title">Education</h3>
+         <div class="resume-item">
+           <h4>Full Stack Developer</h4>
+           <!-- <h5>2015 - 2016</h5> -->
+           <p><em>A full stack developer works on both front-end and back-end development, ensuring complete web application functionality. <br>Natus vel accusamus blanditiis id minima omnis perferendis dignissimos quam doloribus fuga? Iure voluptatibus laboriosam veritatis.</em></p>
+         </div><!-- Edn Resume Item -->
+
+         <div class="resume-item">
+           <h4>UX/UI design</h4>
+           <!-- <h5>2010 - 2014</h5> -->
+           <p><em>A UX/UI designer focuses on creating user-friendly, aesthetically pleasing interfaces to improve overall user experience. <br>Rem quisquam omnis dolorem cupiditate temporibus aliquid. </em></p>
+         </div><!-- Edn Resume Item -->
+
+       </div>
+
+       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+         <h3 class="resume-title">Professional Experience</h3>
+         <div class="resume-item">
+           <h4>Backend Developer</h4>
+           <h5>2024 - Aprel</h5>
+           <ul>
+             <li>A backend developer is responsible for designing, building, and maintaining the server-side of web applications.</li>
+             <li>They work with databases, server logic, APIs, and integration with front-end systems to ensure smooth data flow</li>
+             <li>Backend developers often use programming languages such as Python, Java</li>
+           </ul>
+         </div><!-- Edn Resume Item -->
+
+         <div class="resume-item">
+           <h4>Frontend Developer</h4>
+           <h5>2023-2024</h5>
+           <ul>
+             <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+             <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+             <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+             <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+           </ul>
+         </div><!-- Edn Resume Item -->
+
+       </div>
+
+     </div>
+
+   </div>
+
+ </section><!-- /Resume Section -->
+</main>
+
+
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% endblock title %}
+{% block content %}
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+      <img src="{% static '../static/assets/img/hero.jpg' %}" alt="">
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>komilovna</h2>
+            <p>I'm <span class="typed" data-typed-items="Backend Developer, Frontend Developer, UX/UI Design">Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="https://github.com/komilovna25" class="github"><i class="bi bi-github"></i></a>
+              <a href="https://www.instagram.com/nisa_n5716/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.google.com" class="google-plus"><i class="bi bi-google"></i></a>
+              <a href="https://t.me/dev25_08" class="telegram"><i class="bi bi-telegram"></i></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+    <!-- Resume Section -->
+  </main>
+
+{% endblock content %}

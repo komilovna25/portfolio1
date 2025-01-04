@@ -1,13 +1,9 @@
 from django.shortcuts import render
-from .models import Contact, Portfolio, About
+from .models import Contact,Category, Portfolio, About,Resume,Services
 from django.views.generic.edit import FormView
 from .bot import send_message
 from django.views.generic.list import ListView
 from django.views import View
-
-
-
-
 
 class ContactView(View):
     template_name = 'contact.html'
@@ -40,43 +36,8 @@ class ContactView(View):
 
         return render(request, self.template_name)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def home_view(request):
-    return render(request=request, template_name='index.html')
+    return render(request=request, template_name='hero.html')
 
 
 class AboutListView(ListView):
@@ -84,8 +45,22 @@ class AboutListView(ListView):
     template_name = 'about.html'
     context_object_name = 'about' 
 
+class ResumeListView(ListView):
+    model = Resume
+    template_name = 'resume.html'
+    context_object_name = 'resume' 
 
 class PortfolioListView(ListView):
     model = Portfolio
     template_name = 'portfolio.html'
     context_object_name = 'portfolio' 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Category'] = Category.objects.all()
+        return context 
+
+class ServicesListView(ListView):
+    model = Services
+    template_name = 'services.html'
+    context_object_name = 'services' 
